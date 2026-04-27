@@ -1,0 +1,48 @@
+#primer código
+
+print("*** CALCULADORA ***\n")
+print("1. Sumar")
+print("2. Restar")
+print("3. Multiplicar")
+print("4. Dividir")
+print("5. Salir")
+
+while True:
+    opciones = input("\nelige (1-5): ")
+
+    if opciones == "5":
+        print("\nhasta luego")
+        break
+
+    if opciones in ["1", "2", "3", "4"]:
+        num1 = input("Primer número: ")
+        num2 = input("Segundo número: ")
+        
+        try:
+            a = float(num1)
+            b = float(num2)
+        except ValueError:
+            print("ERROR: Solo se permiten números")
+            continue
+
+        if opciones == "1":
+            resultado = a + b
+            print(f"resultado: {resultado}")
+
+        elif opciones == "2":
+            resultado = a - b
+            print(f"resultado: {resultado}")
+        
+        elif opciones == "3":
+            resultado = a * b
+            print(f"resultado: {resultado}")
+
+        elif opciones == "4":
+            if b != 0:
+                resultado = a / b
+                print(f"resultado: {resultado}")
+            else:
+                print("ERROR: El divisor no puede ser 0")
+
+    else:
+        print("\nERROR: Opción no válida")
